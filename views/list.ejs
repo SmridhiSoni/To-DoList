@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo-List</title>
+    <style>
+        /* body{
+            background-color:cornflowerblue;
+            color:black;
+            height:100vh;
+            width:100vw;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        } */
+        ::placeholder{
+            font-family: 'Shadows Into Light', cursive;
+            font-size: larger;
+            border-radius: 500px;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+        @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+         .a{
+            max-width: 550px;
+            margin: 50px auto;
+            padding: 10px;
+            border: 5px solid black;
+            background-color:  #8f8787;
+            display: flex;
+            justify-content:space-around;
+            color:#f0ece2;
+            font-family: 'Ubuntu', sans-serif;
+            font-size: larger;
+            border-radius: 20px;
+            /* box-shadow: -8px 14px 5px 2px rgba(0,0,0,0.67);
+-webkit-box-shadow: -8px 14px 5px 2px rgba(0,0,0,0.67);
+-moz-box-shadow: -8px 14px 5px 2px rgba(0,0,0,0.67); */
+
+
+box-shadow: 10px 10px 5px 0px rgba(8,7,7,0.75);
+-webkit-box-shadow: 10px 10px 5px 0px rgba(8,7,7,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(8,7,7,0.75);
+        } 
+         .b{
+            max-width: 400px;
+            height: 400px;
+            margin: 30px auto;
+            padding: 10px;
+            box-shadow: 300px;
+            /* border: 10px solid black; */
+            background-color: #ebcbae;
+            display: flex;
+            justify-content:space-around;
+            color:black;
+            font-size: larger;
+            font-family: 'Shadows Into Light', cursive;
+            border-radius: 20px;
+            box-shadow: -8px 14px 5px 2px rgba(0,0,0,0.67);
+-webkit-box-shadow: -8px 14px 5px 2px rgba(0,0,0,0.67);
+-moz-box-shadow: -8px 14px 5px 2px rgba(0,0,0,0.67);
+        } 
+        .fi{
+            background-color: burlywood;
+        }
+        body{
+            /* background-color: beige; */
+             background: #5585b5; 
+              
+            /* background-image: url(../images.jfif); */
+            /* background: linear-gradient(15deg, #13547a 0%, #80d0c7 100%); */
+        }
+
+        .c{
+            /* height:fit-content; */
+            height: 30px;
+            text-align:center;
+            border-radius: 5px;
+            border: none;
+        }
+        .btn{
+          margin: 10px;
+          padding: 10px;
+          border-color:  #005792;
+          border-radius: 5px;
+          /* background-color: #53a8b6t ;
+          border-radius:25%;
+          font-family:'Shadows Into Light', cursive; */
+        }
+        
+        a{
+            text-decoration: none;
+            color: black;
+            font-size: x-large;
+        }
+        /* input:checked+label{
+  text-decoration: line-through;
+  text-decoration-color: #A683E3;
+} */
+    </style>
+</head>
+<body>
+    <div class="a">
+        <h1><%=ofDay%></h1>
+    </div>
+    <div class="b">
+        
+            <ul>
+                <!-- <li>Task 1</li>
+                <li>Task 2</li> -->
+                
+        
+               <% for(i=0;i<newListItems.length;i++){%>
+               
+                <!-- <li><%=newListItems[i]%></li> -->
+                <div>
+                   <hr> <input type="checkbox" name="ch" id=<%= i+"ch" %> > <label for=<%= i+"ch" %>> <a href="/delete-task/?data1=<%=newListItems[i]%>&nm=sumit"><%=newListItems[i] %></a> </hr></label>
+                  </div>
+        
+                <% } %>
+    
+                
+                <form action="/" method="post">
+    
+                    <input type="text" name="newItem" class="c"
+                    autocomplete="off" placeholder="Enter task">
+                    <button type="submit" class="btn">Add</button>
+                    <!-- <button type="reset">Delete </button> -->
+                </form>
+            </ul>
+        
+        
+    </div>
+    
+</body>
+</html>
